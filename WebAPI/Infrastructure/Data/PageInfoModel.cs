@@ -2,6 +2,7 @@
 
 namespace WebAPI.Infrastructure.Data
 {
+    //Вся ифна о странице для пагинации
     public class PageInfoModel
     {
         public int PageNumber { get; private set; }

@@ -5,6 +5,9 @@ namespace WebAPI.Core.Entities
 {
     public class Invoice
     {
+
+        //В таске было указало, что модель содержит две даты,
+        //но что в указаниях Клиентского Приложения, что исходя из контекста в CSV файла, логично, что используется только одна и она перезаписывается при обновлении?
         [Index(0)]
         public DateTime CreateUpdateDateTime { get; set; }
         [Index(1)]

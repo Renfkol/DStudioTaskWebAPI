@@ -17,7 +17,6 @@ namespace WebAPI.Infrastructure.Data
 
         public InvoiceRepository(IHostingEnvironment appEnvironment)
         {
-            //@"D:\Work\DStudioTask\WebAPI\WebAPI\wwwroot\Invoices.csv";
             connectionString = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Invoices.csv"}";
             csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
             {

@@ -4,6 +4,7 @@ using WebAPI.Infrastructure.Data;
 
 namespace WebAPI.Infrastructure.ViewModel
 {
+    //Вьюмодель, отправляемая на клиент 
     public class MainPageViewModel
     {
         public IEnumerable<Invoice> Invoices { get; set; }

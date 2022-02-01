@@ -13,13 +13,16 @@ namespace WebAPI.Controllers
     public class InvoicesController : ControllerBase
     {
         private readonly IRepository<Invoice> _repo;
-        int pageSize = 6; //размер страницы для пагинации
+        int pageSize = 6; //размер страницы для пагинации (кол-во invoice'ов), по идеи этот параметр должен отправляться вместе с запросом о странице с клиента
 
         public InvoicesController(IRepository<Invoice> repo)
         {
             _repo = repo;
         }
 
+
+        //Пагинация реализована на стороне сервера - исходя из соображений быстродейтсвия на клиенте
+        //Мог бы и реализовать и на клиенте через Angular Materials
         [HttpGet()]
         [Route("GetList/{page}")]
         public MainPageViewModel Get(int page = 1)
@@ -50,7 +53,6 @@ namespace WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Invoice newInvoice)
         {
-            //newInvoice.CreateUpdateDateTime=DateTime.Now
             if(ModelState.IsValid)
             {
                 IEnumerable<Invoice> allRecords = _repo.GetInvoiceList();
@@ -63,15 +65,17 @@ namespace WebAPI.Controllers
             return BadRequest(ModelState);        
         }
 
-        //[HttpPut]
-        //public IActionResult Update(Invoice updatedInvoice)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _repo.Update(updatedInvoice);
-        //        return Ok(updatedInvoice);
-        //    }
-        //    return BadRequest(ModelState);
-        //}
+
+
+        [HttpPut]
+        public IActionResult Update(Invoice updatedInvoice)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.Update(updatedInvoice);
+                return Ok(updatedInvoice);
+            }
+            return BadRequest(ModelState);
+        }
     }
 }
