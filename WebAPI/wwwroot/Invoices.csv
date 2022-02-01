@@ -1,0 +1,12 @@
+CreateUpdateDateTime,Id,ProcessingStatus,Sum,PaymentMethod
+03/12/2020 08:04:12,2,Paid,120.00,ElectronicСheck
+02/01/2022 19:57:31,3,New,123,CreditCard
+04/08/2020 12:37:08,4,New,1.00,ElectronicСheck
+03/16/2020 10:41:39,5,New,10.12,ElectronicСheck
+05/14/2020 10:59:17,6,Paid,5.00,CreditCard
+04/09/2020 18:20:32,7,Canceled,1230.00,CreditCard
+03/16/2020 11:13:38,8,Paid,132210.00,DebitCard
+04/13/2020 11:37:09,9,Canceled,10.00,CreditCard
+01/31/2022 11:07:47,10,New,123,ElectronicСheck
+02/01/2022 21:15:59,11,New,3213213,DebitCard
+02/01/2022 21:24:25,12,New,30,ElectronicСheck
